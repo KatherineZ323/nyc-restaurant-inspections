@@ -32,3 +32,6 @@ Cycle Inspection and Pre-permit (Operational) programs, Initial and Re-inspectio
 20. **Exact duplicate rows:** 217 rows in total (206 in scope). All 206 in-scope "repeated violation code within an inspection" cases were exact duplicates → safe to drop (no distinguishing information).
 21. **Inspection key validated:** camis + inspection_date + inspection_type uniquely identifies an inspection; score, grade, and action are consistent across all rows of each in-scope inspection.
 22. **Grade/score mismatch resolved by scope:** in-scope mismatches drop from 271 to 28 (0.04% of in-scope inspections). Most earlier mismatches were in Reopening/Compliance inspections, which are outside scope.
+23. **Restaurant attributes are static:** dba, cuisine, phone, and ZIP never vary across rows for the same camis (likely the dataset uses current info for all rows).
+24. **Never-inspected restaurants:** 3,917 restaurants, each with exactly one placeholder row. All lack cuisine; only 2 of 27,452 inspected restaurants lack cuisine.
+25. **ACTION text vs. violation count:** 306 inspections have zero violations but non-"No violations" actions (mostly reopenings; 4 in scope); 163 have "No violations" actions but recorded violations (mostly administrative; 9 in scope). 13 in-scope cases (0.02%). → Use n_violations as the source of truth, not ACTION text.
