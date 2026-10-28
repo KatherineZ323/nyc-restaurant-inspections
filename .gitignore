@@ -1,0 +1,13 @@
+# Data files (downloaded by notebooks/01_explore.ipynb)
+data/
+
+# Python / Jupyter
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+.vscode/
