@@ -12,6 +12,7 @@ Does NYC's restaurant grading system accurately reflect food safety risk, and ho
 - `notebooks/02_clean.ipynb`: cleaning functions and table construction
 - `sql/01_create_tables.sql`: database schema (tables, primary/foreign keys, constraints)
 - `data_issues_log.md`: all data issues found and how each was handled
+- `notebooks/03_load_database.ipynb`: load cleaned tables into PostgreSQL and validate with SQL
 
 ## Data Model
 | Table | Grain | Rows | Primary key |
@@ -34,3 +35,24 @@ This project uses a local PostgreSQL server (via [Postgres.app](https://postgres
 | Database | `nyc_restaurants` |
 
 Create the database and tables:
+
+```
+psql -p 5433 -d postgres -c "CREATE DATABASE nyc_restaurants;"
+psql -p 5433 -d nyc_restaurants -f sql/01_create_tables.sql
+```
+
+## Roadmap
+**Phase 1: Analysis**
+- [x] Data profiling and business rule validation
+- [x] Data cleaning and table construction (restaurants, inspections, violations)
+- [x] Load tables into PostgreSQL
+- [ ] SQL analysis: grade threshold bunching, predictive value of grades, concentration of violations
+- [ ] Tableau dashboard
+- [ ] Findings report
+
+**Phase 2: Productization**
+- [ ] Reusable ETL pipeline with automated validation
+- [ ] Searchable restaurant inspection web app (Streamlit)
+
+## Tools
+Python (pandas, NumPy), Jupyter, PostgreSQL, Tableau
