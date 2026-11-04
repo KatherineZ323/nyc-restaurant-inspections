@@ -33,6 +33,7 @@ Analysis scope: Cycle and Pre-permit (Operational) programs, initial and re-insp
 - `sql/01_create_tables.sql`: database schema (tables, primary/foreign keys, constraints)
 - `figures/`: charts used in the analysis
 - `data_issues_log.md`: all data issues found and how each was handled
+- `dashboards/nyc_restaurant_inspections.twb`: Tableau workbook. Run `notebooks/04_analysis.ipynb` first to generate the data files in `data/tableau/`; Tableau will prompt you to locate them when opening.
 
 ## Data Model
 | Table | Grain | Rows | Primary key |
