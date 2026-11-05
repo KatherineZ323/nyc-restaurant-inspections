@@ -1,8 +1,10 @@
+**[View the interactive Tableau dashboard](https://public.tableau.com/app/profile/xiaotong.zhang6269/viz/NYCRestaurantInspectionAnalysis_17939143695870/NYCRestaurantInspectionsWhatLetterGradesMiss)**
+
 # NYC Restaurant Inspection Analysis
 
 Does NYC's restaurant grading system accurately reflect food safety risk, and how could inspection resources be allocated more effectively?
 
-**Status:** Analysis complete; dashboard in progress
+**Status:** Phase 1 complete (analysis and dashboard); Phase 2 (pipeline and web app) planned
 
 ## Key Findings
 
@@ -73,8 +75,8 @@ psql -p 5433 -d nyc_restaurants -f sql/01_create_tables.sql
 - [x] Load tables into PostgreSQL
 - [x] SQL analysis: grade threshold bunching, predictive value of grades, concentration and recurrence of violations
 - [x] Risk-based inspection prioritization (rules and logistic regression)
-- [ ] Tableau dashboard
-- [ ] Findings report
+- [x] Tableau dashboard
+- [x] Findings summary (README key findings, notebook write-ups, Tableau story)
 
 **Phase 2: Productization**
 - [ ] Reusable ETL pipeline with automated validation
